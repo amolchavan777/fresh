@@ -1,0 +1,6 @@
+2025-07-04T10:16:00Z NETMON1 CONNECT src=serviceA dst=serviceB status=SUCCESS
+2025-07-04T10:16:01Z NETMON1 CONNECT src=serviceC dst=serviceD status=FAIL
+2025-07-04T10:16:02Z NETMON2 CONNECT src=serviceA dst=serviceC status=SUCCESS
+2025-07-04T10:16:03Z NETMON1 MALFORMED src=serviceE dst= status=SUCCESS
+2025-07-04T10:16:04Z NETMON2 CONNECT src=serviceB dst=serviceA status=SUCCESS
+2025-07-04T10:16:05Z NETMON1 CONNECT src=serviceA dst=serviceB status=SUCCESS

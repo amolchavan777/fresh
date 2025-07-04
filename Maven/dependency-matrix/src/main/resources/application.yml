@@ -1,0 +1,23 @@
+spring:
+  autoconfigure:
+    exclude:
+      - org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration
+      - org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration
+      - org.springframework.boot.autoconfigure.data.neo4j.Neo4jDataAutoConfiguration
+scoring:
+  defaultScore: 0.5
+  sourceBaseScore:
+    CODEBASE: 0.95
+    ROUTER_LOG: 0.85
+    API_GATEWAY: 0.80
+  processedDataPenalty: 0.2
+  minProcessedDataLength: 5
+  minScore: 0.0
+  maxScore: 1.0
+  fieldPenalties:
+    id: 0.1
+    processedData: 0.15
+    rawData: 0.1
+    sourceType: 0.1
+  maxClaimAgeDays: 30
+  oldClaimPenalty: 0.1

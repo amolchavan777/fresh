@@ -1,0 +1,19 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Build with Maven",
+      "type": "shell",
+      "command": "mvn clean install",
+      "group": "build",
+      "problemMatcher": ["$javac"]
+    },
+    {
+      "label": "Run Spring Boot App",
+      "type": "shell",
+      "command": "mvn spring-boot:run",
+      "group": "test",
+      "problemMatcher": ["$javac"]
+    }
+  ]
+}
