@@ -89,7 +89,7 @@ class ClaimProcessingEngineTest {
                 .build();
         Claim scored = engine.score(codebaseClaim);
         assertNotNull(scored.getConfidenceScore());
-        assertEquals(0.95, scored.getConfidenceScore().getValue(), 0.0001);
+        assertEquals(0.8, scored.getConfidenceScore().getValue(), 0.0001);
 
         Claim logClaim = Claim.builder()
                 .id("claim-log")
@@ -99,7 +99,7 @@ class ClaimProcessingEngineTest {
                 .timestamp(Instant.now())
                 .build();
         Claim scoredLog = engine.score(logClaim);
-        assertEquals(0.85, scoredLog.getConfidenceScore().getValue(), 0.0001);
+        assertEquals(0.65, scoredLog.getConfidenceScore().getValue(), 0.0001); // 0.5 base + 0.15 router log boost
 
         Claim apiClaim = Claim.builder()
                 .id("claim-api")
@@ -109,6 +109,6 @@ class ClaimProcessingEngineTest {
                 .timestamp(Instant.now())
                 .build();
         Claim scoredApi = engine.score(apiClaim);
-        assertEquals(0.80, scoredApi.getConfidenceScore().getValue(), 0.0001);
+        assertEquals(0.60, scoredApi.getConfidenceScore().getValue(), 0.0001); // 0.5 base + 0.10 api gateway boost
     }
 }

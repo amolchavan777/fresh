@@ -118,4 +118,40 @@ public class RouterLogAdapter {
                 .timestamp(java.time.Instant.now())
                 .build();
     }
+
+    /**
+     * Parses multiple router log entries from string data.
+     * 
+     * @param logData List of log entries as strings
+     * @return List of claims extracted from the log data
+     */
+    public List<Claim> parseLogData(List<String> logData) {
+        List<Claim> claims = new ArrayList<>();
+        
+        if (logData == null || logData.isEmpty()) {
+            logger.warn("No log data provided for parsing");
+            return claims;
+        }
+        
+        logger.info("Parsing {} router log entries", logData.size());
+        
+        for (int i = 0; i < logData.size(); i++) {
+            String line = logData.get(i);
+            try {
+                RouterLogEntry entry = parseLogLine(line);
+                if (entry != null) {
+                    Claim claim = toClaim(entry, line);
+                    claims.add(claim);
+                    logger.debug("Parsed claim from line {}: {}", i + 1, claim);
+                } else {
+                    logger.debug("Log line did not match pattern: {}", line);
+                }
+            } catch (Exception e) {
+                logger.warn("Failed to parse log line {}: {}", i + 1, line, e);
+            }
+        }
+        
+        logger.info("Successfully parsed {} claims from router log data", claims.size());
+        return claims;
+    }
 }
