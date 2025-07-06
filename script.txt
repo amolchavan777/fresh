@@ -1,0 +1,77 @@
+
+
+🔹 Slide 1: The Challenge — Dependency Mapping in the Real World
+
+⏱️ ~1 minute
+
+Good [morning/afternoon] everyone.
+In a typical enterprise environment, understanding application dependencies should be easy — until it isn’t.
+
+Logs say one thing. Telemetry says another. Some APIs report dependencies, some don’t. CI/CD knows the topology in theory, but production behavior tells a different story.
+
+Conflict is everywhere. And most tools just assume their data is correct.
+
+But in practice — real systems are noisy, partial, contradictory.
+What we need is a way to merge multiple imperfect signals into a trustworthy dependency graph.
+
+So we asked: Can we build a system that thinks like an engineer? One that listens to all the sources, detects contradictions, and reasons out the truth?
+
+⸻
+
+🔹 Slide 2: The Engine — Truth Discovery Over Conflicting Claims
+
+⏱️ ~1 minute 15 seconds
+
+At the core of our solution is a truth discovery engine, based on the Expectation-Maximization algorithm — a statistical approach used in real-world information fusion.
+
+Here’s how it works:
+We feed it dependency claims from diverse sources — logs, telemetry, YAML specs, GitLab pipelines, even API contracts.
+Each claim can be positive (“A connects to B”) or negative (“A failed to connect to B”).
+
+The engine:
+	•	Assigns trust scores to each data source
+	•	Separates conflicting from non-conflicting claims
+	•	Learns which claims are likely true — and which are noise
+
+It runs iteratively, updating source credibility and claim truth probabilities until it converges on a reliable model.
+
+All of this is implemented in Java, built around adapters for different data sources — and yes, it supports negative evidence, which most tools ignore.
+
+⸻
+
+🔹 Slide 3: Why This Works When Others Fail
+
+⏱️ ~1 minute
+
+Most systems fail silently when data sources disagree — ours doesn’t. That’s the key differentiator.
+
+Let me give you four reasons this works:
+	1.	Contradiction isn’t thrown out — it’s modeled. We give every source a voice, but weigh their reliability based on past accuracy.
+	2.	Data normalization is automatic. Claims from YAML specs, logs, OpenTelemetry, and GitLab are grouped, de-duped, and aligned.
+	3.	Negative signals matter. A failed connection or a missing trace is used as evidence against a dependency — not ignored.
+	4.	Final outputs are clean. We don’t export raw logs; we export resolved truths — perfect for ArchiMate, CMDBs, and EA tooling.
+
+So instead of drawing from guesswork or tribal knowledge, we generate a mathematically grounded dependency graph.
+
+⸻
+
+🔹 (Optional) Slide 4: Business Impact
+
+⏱️ ~30 seconds
+
+Technically, this is elegant — but it’s also impactful.
+
+With reliable application dependencies:
+	•	Root cause analysis gets faster — no false dependencies
+	•	Zero trust enforcement is easier — know exactly what should talk to what
+	•	Cloud migrations don’t break — because we know what’s real
+	•	And developer onboarding is smooth — no more diagrams taped to walls
+
+In a world where observability is abundant but inconsistent, we don’t just observe — we infer the truth.
+
+⸻
+
+✅ Final Line (Call to Action)
+
+We’ve built a system that reasons like a human, scales like software, and integrates like architecture.
+We believe this isn’t just the best technical solution — it’s the most comprehensive, trustworthy, and ready-to-ship approach to building reliable application dependency maps.
