@@ -309,12 +309,19 @@ public class CodebaseAdapter {
     
     /**
      * Parses a simple dependency string in format "buildType:groupId:artifactId:version"
+     * or Maven XML format
      */
     private Claim parseSimpleDependencyString(String depString) {
         if (depString == null || depString.trim().isEmpty()) {
             return null;
         }
         
+        // Handle XML format dependencies
+        if (depString.trim().startsWith("<dependency>")) {
+            return parseXmlDependency(depString);
+        }
+        
+        // Handle simple format: maven:groupId:artifactId:version
         String[] parts = depString.trim().split(":");
         if (parts.length < 3) {
             logger.debug("Invalid dependency format: {}", depString);
@@ -333,6 +340,34 @@ public class CodebaseAdapter {
             version = "unknown";
         }
         
+        return createClaimFromDependency(buildType, groupId, artifactId, version, depString);
+    }
+    
+    /**
+     * Parse XML format dependency
+     */
+    private Claim parseXmlDependency(String xmlString) {
+        Matcher matcher = MAVEN_DEPENDENCY_PATTERN.matcher(xmlString);
+        if (matcher.find()) {
+            String groupId = matcher.group(1).trim();
+            String artifactId = matcher.group(2).trim();
+            String version = matcher.group(3).trim();
+            
+            return createClaimFromDependency("maven", groupId, artifactId, version, xmlString);
+        }
+        
+        logger.debug("Could not parse XML dependency: {}", xmlString);
+        return null;
+    }
+    
+    /**
+     * Create a claim from dependency information
+     */
+    private Claim createClaimFromDependency(String buildType, String groupId, String artifactId, String version, String rawData) {
+        // Extract meaningful service names
+        String sourceApp = extractSourceApplication(groupId);
+        String targetApp = extractTargetApplication(artifactId);
+        
         // Create CodebaseDependency
         CodebaseDependency dependency = CodebaseDependency.builder()
             .id(UUID.randomUUID().toString())
@@ -340,21 +375,36 @@ public class CodebaseAdapter {
             .artifactId(artifactId)
             .version(version)
             .dependencyType(buildType)
-            .sourceApplication("unknown-app")  // Would be determined from context
-            .targetApplication(extractTargetApplication(artifactId))
+            .sourceApplication(sourceApp)
+            .targetApplication(targetApp)
             .timestamp(Instant.now())
-            .rawXml(depString) // Add the rawXml field that's required
+            .rawXml(rawData)
             .build();
         
         // Convert to claim
         return Claim.builder()
             .id("codebase_" + UUID.randomUUID().toString())
             .sourceType("CODEBASE")
-            .rawData(depString)
+            .rawData(rawData)
             .processedData(dependency.getSourceApplication() + " -> " + dependency.getTargetApplication())
             .timestamp(Instant.now())
             .confidenceScore(ConfidenceScore.of(0.9)) // High confidence for codebase dependencies
             .build();
+    }
+    
+    /**
+     * Extract source application from group ID
+     */
+    private String extractSourceApplication(String groupId) {
+        if (groupId == null) return "unknown-app";
+        
+        // Extract company/organization and assume it's the source system
+        if (groupId.contains(".")) {
+            String[] parts = groupId.split("\\.");
+            return parts[parts.length - 1] + "-system";
+        }
+        
+        return groupId + "-app";
     }
     
     /**

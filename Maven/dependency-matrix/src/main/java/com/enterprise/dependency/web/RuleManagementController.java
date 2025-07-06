@@ -13,6 +13,7 @@ import java.util.concurrent.ConcurrentHashMap;
  */
 @RestController
 @RequestMapping("/api/rules")
+@CrossOrigin(origins = {"http://localhost:3000", "http://localhost:5173", "http://localhost:5174", "http://localhost:5175", "http://localhost:5176"}) // Allow Vite dev server on multiple ports
 public class RuleManagementController {
     private final DynamicRuleEngine dynamicRuleEngine;
     // In-memory map to simulate rule storage (key: rule name, value: rule value)

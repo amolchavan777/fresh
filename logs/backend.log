@@ -1,0 +1,197 @@
+WARNING: A terminally deprecated method in sun.misc.Unsafe has been called
+WARNING: sun.misc.Unsafe::staticFieldBase has been called by com.google.inject.internal.aop.HiddenClassDefiner (file:/opt/homebrew/Cellar/maven/3.9.10/libexec/lib/guice-5.1.0-classes.jar)
+WARNING: Please consider reporting this to the maintainers of class com.google.inject.internal.aop.HiddenClassDefiner
+WARNING: sun.misc.Unsafe::staticFieldBase will be removed in a future release
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ------------< com.enterprise.dependency:dependency-matrix >-------------
+[INFO] Building dependency-matrix 1.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> spring-boot:2.7.18:run (default-cli) > test-compile @ dependency-matrix >>>
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ dependency-matrix ---
+[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] Copying 6 resources from src/main/resources to target/classes
+[INFO] 
+[INFO] --- compiler:3.13.0:compile (default-compile) @ dependency-matrix ---
+[INFO] Recompiling the module because of changed source code.
+[WARNING] File encoding has not been set, using platform encoding UTF-8, i.e. build is platform dependent!
+[INFO] Compiling 33 source files with javac [debug target 1.8] to target/classes
+[WARNING] bootstrap class path is not set in conjunction with -source 8
+  not setting the bootstrap class path may lead to class files that cannot run on JDK 8
+    --release 8 is recommended instead of -source 8 -target 1.8 because it sets the bootstrap class path automatically
+[WARNING] source value 8 is obsolete and will be removed in a future release
+[WARNING] target value 8 is obsolete and will be removed in a future release
+[WARNING] To suppress warnings about obsolete options, use -Xlint:-options.
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ dependency-matrix ---
+[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] skip non existing resourceDirectory /Users/theamol/Downloads/fresh/Maven/dependency-matrix/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.13.0:testCompile (default-testCompile) @ dependency-matrix ---
+[INFO] Recompiling the module because of changed dependency.
+[WARNING] File encoding has not been set, using platform encoding UTF-8, i.e. build is platform dependent!
+[INFO] Compiling 16 source files with javac [debug target 1.8] to target/test-classes
+[WARNING] bootstrap class path is not set in conjunction with -source 8
+  not setting the bootstrap class path may lead to class files that cannot run on JDK 8
+    --release 8 is recommended instead of -source 8 -target 1.8 because it sets the bootstrap class path automatically
+[WARNING] source value 8 is obsolete and will be removed in a future release
+[WARNING] target value 8 is obsolete and will be removed in a future release
+[WARNING] To suppress warnings about obsolete options, use -Xlint:-options.
+[INFO] 
+[INFO] <<< spring-boot:2.7.18:run (default-cli) < test-compile @ dependency-matrix <<<
+[INFO] 
+[INFO] 
+[INFO] --- spring-boot:2.7.18:run (default-cli) @ dependency-matrix ---
+[INFO] Attaching agents: []
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+[32m :: Spring Boot :: [39m             [2m (v2.7.18)[0;39m
+
+[2m2025-07-06 15:18:11.638[0;39m [32m INFO[0;39m [35m10368[0;39m [2m---[0;39m [2m[           main][0;39m [36mc.e.d.DependencyMatrixApplication       [0;39m [2m:[0;39m Starting DependencyMatrixApplication using Java 24.0.1 on Amols-MacBook-Pro-8.local with PID 10368 (/Users/theamol/Downloads/fresh/Maven/dependency-matrix/target/classes started by theamol in /Users/theamol/Downloads/fresh/Maven/dependency-matrix)
+[2m2025-07-06 15:18:11.638[0;39m [32m INFO[0;39m [35m10368[0;39m [2m---[0;39m [2m[           main][0;39m [36mc.e.d.DependencyMatrixApplication       [0;39m [2m:[0;39m No active profile set, falling back to 1 default profile: "default"
+[2m2025-07-06 15:18:11.777[0;39m [32m INFO[0;39m [35m10368[0;39m [2m---[0;39m [2m[           main][0;39m [36m.s.d.r.c.RepositoryConfigurationDelegate[0;39m [2m:[0;39m Multiple Spring Data modules found, entering strict repository configuration mode
+[2m2025-07-06 15:18:11.778[0;39m [32m INFO[0;39m [35m10368[0;39m [2m---[0;39m [2m[           main][0;39m [36m.s.d.r.c.RepositoryConfigurationDelegate[0;39m [2m:[0;39m Bootstrapping Spring Data Neo4j repositories in DEFAULT mode.
+[2m2025-07-06 15:18:11.781[0;39m [32m INFO[0;39m [35m10368[0;39m [2m---[0;39m [2m[           main][0;39m [36m.s.d.r.c.RepositoryConfigurationDelegate[0;39m [2m:[0;39m Finished Spring Data repository scanning in 2 ms. Found 0 Neo4j repository interfaces.
+WARNING: A restricted method in java.lang.System has been called
+WARNING: java.lang.System::load has been called by org.apache.tomcat.jni.Library in an unnamed module (file:/Users/theamol/.m2/repository/org/apache/tomcat/embed/tomcat-embed-core/9.0.83/tomcat-embed-core-9.0.83.jar)
+WARNING: Use --enable-native-access=ALL-UNNAMED to avoid a warning for callers in this module
+WARNING: Restricted methods will be blocked in a future release unless native access is enabled
+
+[2m2025-07-06 15:18:11.902[0;39m [32m INFO[0;39m [35m10368[0;39m [2m---[0;39m [2m[           main][0;39m [36mo.s.b.w.embedded.tomcat.TomcatWebServer [0;39m [2m:[0;39m Tomcat initialized with port(s): 8080 (http)
+[2m2025-07-06 15:18:11.905[0;39m [32m INFO[0;39m [35m10368[0;39m [2m---[0;39m [2m[           main][0;39m [36mo.apache.catalina.core.StandardService  [0;39m [2m:[0;39m Starting service [Tomcat]
+[2m2025-07-06 15:18:11.905[0;39m [32m INFO[0;39m [35m10368[0;39m [2m---[0;39m [2m[           main][0;39m [36morg.apache.catalina.core.StandardEngine [0;39m [2m:[0;39m Starting Servlet engine: [Apache Tomcat/9.0.83]
+[2m2025-07-06 15:18:11.929[0;39m [32m INFO[0;39m [35m10368[0;39m [2m---[0;39m [2m[           main][0;39m [36mo.a.c.c.C.[Tomcat].[localhost].[/]      [0;39m [2m:[0;39m Initializing Spring embedded WebApplicationContext
+[2m2025-07-06 15:18:11.929[0;39m [32m INFO[0;39m [35m10368[0;39m [2m---[0;39m [2m[           main][0;39m [36mw.s.c.ServletWebServerApplicationContext[0;39m [2m:[0;39m Root WebApplicationContext: initialization completed in 277 ms
+[2m2025-07-06 15:18:11.949[0;39m [33m WARN[0;39m [35m10368[0;39m [2m---[0;39m [2m[           main][0;39m [36mc.e.d.scoring.DynamicRuleEngine         [0;39m [2m:[0;39m Could not load rules from file, using defaults.
+[2m2025-07-06 15:18:11.949[0;39m [32m INFO[0;39m [35m10368[0;39m [2m---[0;39m [2m[           main][0;39m [36mc.e.d.engine.ClaimProcessingEngine      [0;39m [2m:[0;39m ClaimProcessingEngine initialized with scoring engine: DynamicRuleEngine
+[2m2025-07-06 15:18:11.959[0;39m [32m INFO[0;39m [35m10368[0;39m [2m---[0;39m [2m[           main][0;39m [36mc.e.dependency.web.ParserController     [0;39m [2m:[0;39m ParserController initialized successfully
+WARNING: A terminally deprecated method in sun.misc.Unsafe has been called
+WARNING: sun.misc.Unsafe::objectFieldOffset has been called by org.neo4j.driver.internal.shaded.io.netty.util.internal.PlatformDependent0$4 (file:/Users/theamol/.m2/repository/org/neo4j/driver/neo4j-java-driver/4.4.12/neo4j-java-driver-4.4.12.jar)
+WARNING: Please consider reporting this to the maintainers of class org.neo4j.driver.internal.shaded.io.netty.util.internal.PlatformDependent0$4
+WARNING: sun.misc.Unsafe::objectFieldOffset will be removed in a future release
+[2m2025-07-06 15:18:12.062[0;39m [32m INFO[0;39m [35m10368[0;39m [2m---[0;39m [2m[           main][0;39m [36morg.neo4j.driver.internal.DriverFactory [0;39m [2m:[0;39m Direct driver instance 851116146 created for server address localhost:7687
+[2m2025-07-06 15:18:12.076[0;39m [32m INFO[0;39m [35m10368[0;39m [2m---[0;39m [2m[           main][0;39m [36mo.s.b.w.embedded.tomcat.TomcatWebServer [0;39m [2m:[0;39m Tomcat started on port(s): 8080 (http) with context path ''
+[2m2025-07-06 15:18:12.078[0;39m [32m INFO[0;39m [35m10368[0;39m [2m---[0;39m [2m[           main][0;39m [36mc.e.d.DependencyMatrixApplication       [0;39m [2m:[0;39m Started DependencyMatrixApplication in 0.544 seconds (JVM running for 0.636)
+[2m2025-07-06 15:18:13.010[0;39m [32m INFO[0;39m [35m10368[0;39m [2m---[0;39m [2m[nio-8080-exec-1][0;39m [36mo.a.c.c.C.[Tomcat].[localhost].[/]      [0;39m [2m:[0;39m Initializing Spring DispatcherServlet 'dispatcherServlet'
+[2m2025-07-06 15:18:13.010[0;39m [32m INFO[0;39m [35m10368[0;39m [2m---[0;39m [2m[nio-8080-exec-1][0;39m [36mo.s.web.servlet.DispatcherServlet       [0;39m [2m:[0;39m Initializing Servlet 'dispatcherServlet'
+[2m2025-07-06 15:18:13.010[0;39m [32m INFO[0;39m [35m10368[0;39m [2m---[0;39m [2m[nio-8080-exec-1][0;39m [36mo.s.web.servlet.DispatcherServlet       [0;39m [2m:[0;39m Completed initialization in 0 ms
+[2m2025-07-06 15:18:18.145[0;39m [32m INFO[0;39m [35m10368[0;39m [2m---[0;39m [2m[nio-8080-exec-6][0;39m [36mc.e.d.web.DependencyMatrixController    [0;39m [2m:[0;39m Fetching system summary for dashboard
+[2m2025-07-06 15:18:18.145[0;39m [32m INFO[0;39m [35m10368[0;39m [2m---[0;39m [2m[nio-8080-exec-6][0;39m [36mc.e.d.service.DependencyMatrixService   [0;39m [2m:[0;39m Processing enhanced sample data for demonstration
+[2m2025-07-06 15:18:18.145[0;39m [32m INFO[0;39m [35m10368[0;39m [2m---[0;39m [2m[nio-8080-exec-6][0;39m [36mc.e.d.service.DependencyMatrixService   [0;39m [2m:[0;39m Starting full dependency matrix pipeline processing with all data sources
+[2m2025-07-06 15:18:18.146[0;39m [32m INFO[0;39m [35m10368[0;39m [2m---[0;39m [2m[nio-8080-exec-6][0;39m [36mc.e.dependency.adapter.RouterLogAdapter [0;39m [2m:[0;39m Parsing 19 router log entries
+[2m2025-07-06 15:18:18.147[0;39m [32m INFO[0;39m [35m10368[0;39m [2m---[0;39m [2m[nio-8080-exec-6][0;39m [36mc.e.dependency.adapter.RouterLogAdapter [0;39m [2m:[0;39m Successfully parsed 17 claims from router log data
+[2m2025-07-06 15:18:18.147[0;39m [32m INFO[0;39m [35m10368[0;39m [2m---[0;39m [2m[nio-8080-exec-6][0;39m [36mc.e.dependency.adapter.CodebaseAdapter  [0;39m [2m:[0;39m Parsing 15 codebase dependency entries
+[2m2025-07-06 15:18:18.148[0;39m [32m INFO[0;39m [35m10368[0;39m [2m---[0;39m [2m[nio-8080-exec-6][0;39m [36mc.e.dependency.adapter.CodebaseAdapter  [0;39m [2m:[0;39m Successfully parsed 13 claims from codebase dependency data
+[2m2025-07-06 15:18:18.148[0;39m [32m INFO[0;39m [35m10368[0;39m [2m---[0;39m [2m[nio-8080-exec-6][0;39m [36mc.e.d.adapter.ApiGatewayAdapter         [0;39m [2m:[0;39m Parsing API Gateway logs in json format
+[2m2025-07-06 15:18:18.156[0;39m [32m INFO[0;39m [35m10368[0;39m [2m---[0;39m [2m[nio-8080-exec-6][0;39m [36mc.e.d.adapter.ApiGatewayAdapter         [0;39m [2m:[0;39m Extracted 12 API call claims from json format logs
+[2m2025-07-06 15:18:18.156[0;39m [32m INFO[0;39m [35m10368[0;39m [2m---[0;39m [2m[nio-8080-exec-6][0;39m [36mc.e.dependency.adapter.CiCdAdapter      [0;39m [2m:[0;39m Parsing 7 CI/CD log entries
+[2m2025-07-06 15:18:18.157[0;39m [32m INFO[0;39m [35m10368[0;39m [2m---[0;39m [2m[nio-8080-exec-6][0;39m [36mc.e.dependency.adapter.CiCdAdapter      [0;39m [2m:[0;39m Extracted 4 CI/CD dependency claims
+[2m2025-07-06 15:18:18.157[0;39m [32m INFO[0;39m [35m10368[0;39m [2m---[0;39m [2m[nio-8080-exec-6][0;39m [36mc.e.dependency.adapter.TelemetryAdapter [0;39m [2m:[0;39m Parsing 12 telemetry log entries
+[2m2025-07-06 15:18:18.157[0;39m [32m INFO[0;39m [35m10368[0;39m [2m---[0;39m [2m[nio-8080-exec-6][0;39m [36mc.e.dependency.adapter.TelemetryAdapter [0;39m [2m:[0;39m Extracted 12 telemetry dependency claims
+[2m2025-07-06 15:18:18.157[0;39m [32m INFO[0;39m [35m10368[0;39m [2m---[0;39m [2m[nio-8080-exec-6][0;39m [36mc.e.d.service.DependencyMatrixService   [0;39m [2m:[0;39m Step 1 Complete: Ingested 58 claims from all sources
+[2m2025-07-06 15:18:18.157[0;39m [32m INFO[0;39m [35m10368[0;39m [2m---[0;39m [2m[nio-8080-exec-6][0;39m [36mc.e.d.engine.ClaimProcessingEngine      [0;39m [2m:[0;39m Starting processing of 58 raw claims
+[2m2025-07-06 15:18:18.158[0;39m [32m INFO[0;39m [35m10368[0;39m [2m---[0;39m [2m[nio-8080-exec-6][0;39m [36mc.e.d.engine.ClaimProcessingEngine      [0;39m [2m:[0;39m Claim processing completed: 58 successful, 0 failed, took 0 ms
+[2m2025-07-06 15:18:18.158[0;39m [32m INFO[0;39m [35m10368[0;39m [2m---[0;39m [2m[nio-8080-exec-6][0;39m [36mc.e.d.service.DependencyMatrixService   [0;39m [2m:[0;39m Step 2 Complete: Scored 58 claims
+[2m2025-07-06 15:18:18.158[0;39m [32m INFO[0;39m [35m10368[0;39m [2m---[0;39m [2m[nio-8080-exec-6][0;39m [36mc.e.d.engine.ConflictResolutionEngine   [0;39m [2m:[0;39m Resolving conflicts for 58 claims
+[2m2025-07-06 15:18:18.159[0;39m [32m INFO[0;39m [35m10368[0;39m [2m---[0;39m [2m[nio-8080-exec-6][0;39m [36mc.e.d.engine.ConflictResolutionEngine   [0;39m [2m:[0;39m Resolved conflict: selected claim apigateway_bcefd537-cbf8-4ff6-b5f9-bfa1085931f1 with confidence 0.04400000000000001
+[2m2025-07-06 15:18:18.159[0;39m [32m INFO[0;39m [35m10368[0;39m [2m---[0;39m [2m[nio-8080-exec-6][0;39m [36mc.e.d.engine.ConflictResolutionEngine   [0;39m [2m:[0;39m Resolved conflict: selected claim apigateway_7e686720-4154-4bc3-a8af-a730f8c0141e with confidence 0.04400000000000001
+[2m2025-07-06 15:18:18.159[0;39m [32m INFO[0;39m [35m10368[0;39m [2m---[0;39m [2m[nio-8080-exec-6][0;39m [36mc.e.d.engine.ConflictResolutionEngine   [0;39m [2m:[0;39m Resolved conflict: selected claim apigateway_1f982f63-78f4-46f4-860e-23a91abe278a with confidence 0.04400000000000001
+[2m2025-07-06 15:18:18.159[0;39m [32m INFO[0;39m [35m10368[0;39m [2m---[0;39m [2m[nio-8080-exec-6][0;39m [36mc.e.d.engine.ConflictResolutionEngine   [0;39m [2m:[0;39m Resolved 55 claim groups into 55 final claims
+[2m2025-07-06 15:18:18.159[0;39m [32m INFO[0;39m [35m10368[0;39m [2m---[0;39m [2m[nio-8080-exec-6][0;39m [36mc.e.d.service.DependencyMatrixService   [0;39m [2m:[0;39m Step 3 Complete: Resolved to 55 final claims
+[2m2025-07-06 15:18:18.159[0;39m [32m INFO[0;39m [35m10368[0;39m [2m---[0;39m [2m[nio-8080-exec-6][0;39m [36mc.e.dependency.engine.InferenceEngine   [0;39m [2m:[0;39m Starting dependency inference on 55 claims
+[2m2025-07-06 15:18:18.161[0;39m [32m INFO[0;39m [35m10368[0;39m [2m---[0;39m [2m[nio-8080-exec-6][0;39m [36mc.e.dependency.engine.InferenceEngine   [0;39m [2m:[0;39m Inferred 30 dependencies from 55 claim groups
+[2m2025-07-06 15:18:18.161[0;39m [32m INFO[0;39m [35m10368[0;39m [2m---[0;39m [2m[nio-8080-exec-6][0;39m [36mc.e.d.service.DependencyMatrixService   [0;39m [2m:[0;39m Step 4 Complete: Inferred 30 dependencies
+[2m2025-07-06 15:18:18.161[0;39m [32m INFO[0;39m [35m10368[0;39m [2m---[0;39m [2m[nio-8080-exec-6][0;39m [36mc.e.d.engine.DependencyGraphBuilder     [0;39m [2m:[0;39m Building dependency graph from 30 dependencies
+[2m2025-07-06 15:18:18.162[0;39m [32m INFO[0;39m [35m10368[0;39m [2m---[0;39m [2m[nio-8080-exec-6][0;39m [36mc.e.d.engine.DependencyGraphBuilder     [0;39m [2m:[0;39m Built dependency graph with 39 nodes and 30 edges
+[2m2025-07-06 15:18:18.163[0;39m [32m INFO[0;39m [35m10368[0;39m [2m---[0;39m [2m[nio-8080-exec-6][0;39m [36mc.e.d.service.DependencyMatrixService   [0;39m [2m:[0;39m Step 5 Complete: Built dependency graph
+[2m2025-07-06 15:18:18.163[0;39m [32m INFO[0;39m [35m10368[0;39m [2m---[0;39m [2m[nio-8080-exec-6][0;39m [36mc.e.d.service.DependencyMatrixService   [0;39m [2m:[0;39m Pipeline Complete: Generated dependency matrix with 39 applications and 30 dependencies
+[2m2025-07-06 15:18:18.163[0;39m [32m INFO[0;39m [35m10368[0;39m [2m---[0;39m [2m[nio-8080-exec-6][0;39m [36mc.e.d.web.DependencyMatrixController    [0;39m [2m:[0;39m System summary generated successfully
+[2m2025-07-06 15:18:31.574[0;39m [32m INFO[0;39m [35m10368[0;39m [2m---[0;39m [2m[nio-8080-exec-7][0;39m [36mc.e.d.web.DependencyMatrixController    [0;39m [2m:[0;39m Processing custom data via REST API
+[2m2025-07-06 15:18:31.575[0;39m [32m INFO[0;39m [35m10368[0;39m [2m---[0;39m [2m[nio-8080-exec-7][0;39m [36mc.e.d.service.DependencyMatrixService   [0;39m [2m:[0;39m Starting full dependency matrix pipeline processing with all data sources
+[2m2025-07-06 15:18:31.575[0;39m [32m INFO[0;39m [35m10368[0;39m [2m---[0;39m [2m[nio-8080-exec-7][0;39m [36mc.e.dependency.adapter.RouterLogAdapter [0;39m [2m:[0;39m Parsing 6 router log entries
+[2m2025-07-06 15:18:31.575[0;39m [32m INFO[0;39m [35m10368[0;39m [2m---[0;39m [2m[nio-8080-exec-7][0;39m [36mc.e.dependency.adapter.RouterLogAdapter [0;39m [2m:[0;39m Successfully parsed 6 claims from router log data
+[2m2025-07-06 15:18:31.575[0;39m [32m INFO[0;39m [35m10368[0;39m [2m---[0;39m [2m[nio-8080-exec-7][0;39m [36mc.e.d.service.DependencyMatrixService   [0;39m [2m:[0;39m Step 1 Complete: Ingested 6 claims from all sources
+[2m2025-07-06 15:18:31.575[0;39m [32m INFO[0;39m [35m10368[0;39m [2m---[0;39m [2m[nio-8080-exec-7][0;39m [36mc.e.d.engine.ClaimProcessingEngine      [0;39m [2m:[0;39m Starting processing of 6 raw claims
+[2m2025-07-06 15:18:31.575[0;39m [32m INFO[0;39m [35m10368[0;39m [2m---[0;39m [2m[nio-8080-exec-7][0;39m [36mc.e.d.engine.ClaimProcessingEngine      [0;39m [2m:[0;39m Claim processing completed: 6 successful, 0 failed, took 0 ms
+[2m2025-07-06 15:18:31.575[0;39m [32m INFO[0;39m [35m10368[0;39m [2m---[0;39m [2m[nio-8080-exec-7][0;39m [36mc.e.d.service.DependencyMatrixService   [0;39m [2m:[0;39m Step 2 Complete: Scored 6 claims
+[2m2025-07-06 15:18:31.575[0;39m [32m INFO[0;39m [35m10368[0;39m [2m---[0;39m [2m[nio-8080-exec-7][0;39m [36mc.e.d.engine.ConflictResolutionEngine   [0;39m [2m:[0;39m Resolving conflicts for 6 claims
+[2m2025-07-06 15:18:31.575[0;39m [32m INFO[0;39m [35m10368[0;39m [2m---[0;39m [2m[nio-8080-exec-7][0;39m [36mc.e.d.engine.ConflictResolutionEngine   [0;39m [2m:[0;39m Resolved 6 claim groups into 6 final claims
+[2m2025-07-06 15:18:31.575[0;39m [32m INFO[0;39m [35m10368[0;39m [2m---[0;39m [2m[nio-8080-exec-7][0;39m [36mc.e.d.service.DependencyMatrixService   [0;39m [2m:[0;39m Step 3 Complete: Resolved to 6 final claims
+[2m2025-07-06 15:18:31.575[0;39m [32m INFO[0;39m [35m10368[0;39m [2m---[0;39m [2m[nio-8080-exec-7][0;39m [36mc.e.dependency.engine.InferenceEngine   [0;39m [2m:[0;39m Starting dependency inference on 6 claims
+[2m2025-07-06 15:18:31.575[0;39m [32m INFO[0;39m [35m10368[0;39m [2m---[0;39m [2m[nio-8080-exec-7][0;39m [36mc.e.dependency.engine.InferenceEngine   [0;39m [2m:[0;39m Inferred 6 dependencies from 6 claim groups
+[2m2025-07-06 15:18:31.575[0;39m [32m INFO[0;39m [35m10368[0;39m [2m---[0;39m [2m[nio-8080-exec-7][0;39m [36mc.e.d.service.DependencyMatrixService   [0;39m [2m:[0;39m Step 4 Complete: Inferred 6 dependencies
+[2m2025-07-06 15:18:31.576[0;39m [32m INFO[0;39m [35m10368[0;39m [2m---[0;39m [2m[nio-8080-exec-7][0;39m [36mc.e.d.engine.DependencyGraphBuilder     [0;39m [2m:[0;39m Building dependency graph from 6 dependencies
+[2m2025-07-06 15:18:31.576[0;39m [32m INFO[0;39m [35m10368[0;39m [2m---[0;39m [2m[nio-8080-exec-7][0;39m [36mc.e.d.engine.DependencyGraphBuilder     [0;39m [2m:[0;39m Built dependency graph with 8 nodes and 6 edges
+[2m2025-07-06 15:18:31.576[0;39m [32m INFO[0;39m [35m10368[0;39m [2m---[0;39m [2m[nio-8080-exec-7][0;39m [36mc.e.d.service.DependencyMatrixService   [0;39m [2m:[0;39m Step 5 Complete: Built dependency graph
+[2m2025-07-06 15:18:31.576[0;39m [32m INFO[0;39m [35m10368[0;39m [2m---[0;39m [2m[nio-8080-exec-7][0;39m [36mc.e.d.service.DependencyMatrixService   [0;39m [2m:[0;39m Pipeline Complete: Generated dependency matrix with 8 applications and 6 dependencies
+[2m2025-07-06 15:18:31.576[0;39m [32m INFO[0;39m [35m10368[0;39m [2m---[0;39m [2m[nio-8080-exec-7][0;39m [36mc.e.d.web.DependencyMatrixController    [0;39m [2m:[0;39m Custom data processed successfully: 8 apps, 6 deps
+[2m2025-07-06 15:18:36.288[0;39m [32m INFO[0;39m [35m10368[0;39m [2m---[0;39m [2m[nio-8080-exec-9][0;39m [36mc.e.d.web.DependencyMatrixController    [0;39m [2m:[0;39m Fetching system summary for dashboard
+[2m2025-07-06 15:18:36.288[0;39m [32m INFO[0;39m [35m10368[0;39m [2m---[0;39m [2m[nio-8080-exec-9][0;39m [36mc.e.d.service.DependencyMatrixService   [0;39m [2m:[0;39m Processing enhanced sample data for demonstration
+[2m2025-07-06 15:18:36.288[0;39m [32m INFO[0;39m [35m10368[0;39m [2m---[0;39m [2m[nio-8080-exec-9][0;39m [36mc.e.d.service.DependencyMatrixService   [0;39m [2m:[0;39m Starting full dependency matrix pipeline processing with all data sources
+[2m2025-07-06 15:18:36.288[0;39m [32m INFO[0;39m [35m10368[0;39m [2m---[0;39m [2m[nio-8080-exec-9][0;39m [36mc.e.dependency.adapter.RouterLogAdapter [0;39m [2m:[0;39m Parsing 19 router log entries
+[2m2025-07-06 15:18:36.289[0;39m [32m INFO[0;39m [35m10368[0;39m [2m---[0;39m [2m[nio-8080-exec-9][0;39m [36mc.e.dependency.adapter.RouterLogAdapter [0;39m [2m:[0;39m Successfully parsed 17 claims from router log data
+[2m2025-07-06 15:18:36.290[0;39m [32m INFO[0;39m [35m10368[0;39m [2m---[0;39m [2m[nio-8080-exec-9][0;39m [36mc.e.dependency.adapter.CodebaseAdapter  [0;39m [2m:[0;39m Parsing 15 codebase dependency entries
+[2m2025-07-06 15:18:36.291[0;39m [32m INFO[0;39m [35m10368[0;39m [2m---[0;39m [2m[nio-8080-exec-9][0;39m [36mc.e.dependency.adapter.CodebaseAdapter  [0;39m [2m:[0;39m Successfully parsed 13 claims from codebase dependency data
+[2m2025-07-06 15:18:36.291[0;39m [32m INFO[0;39m [35m10368[0;39m [2m---[0;39m [2m[nio-8080-exec-9][0;39m [36mc.e.d.adapter.ApiGatewayAdapter         [0;39m [2m:[0;39m Parsing API Gateway logs in json format
+[2m2025-07-06 15:18:36.294[0;39m [32m INFO[0;39m [35m10368[0;39m [2m---[0;39m [2m[nio-8080-exec-9][0;39m [36mc.e.d.adapter.ApiGatewayAdapter         [0;39m [2m:[0;39m Extracted 12 API call claims from json format logs
+[2m2025-07-06 15:18:36.294[0;39m [32m INFO[0;39m [35m10368[0;39m [2m---[0;39m [2m[nio-8080-exec-9][0;39m [36mc.e.dependency.adapter.CiCdAdapter      [0;39m [2m:[0;39m Parsing 7 CI/CD log entries
+[2m2025-07-06 15:18:36.296[0;39m [32m INFO[0;39m [35m10368[0;39m [2m---[0;39m [2m[nio-8080-exec-9][0;39m [36mc.e.dependency.adapter.CiCdAdapter      [0;39m [2m:[0;39m Extracted 4 CI/CD dependency claims
+[2m2025-07-06 15:18:36.296[0;39m [32m INFO[0;39m [35m10368[0;39m [2m---[0;39m [2m[nio-8080-exec-9][0;39m [36mc.e.dependency.adapter.TelemetryAdapter [0;39m [2m:[0;39m Parsing 12 telemetry log entries
+[2m2025-07-06 15:18:36.297[0;39m [32m INFO[0;39m [35m10368[0;39m [2m---[0;39m [2m[nio-8080-exec-9][0;39m [36mc.e.dependency.adapter.TelemetryAdapter [0;39m [2m:[0;39m Extracted 12 telemetry dependency claims
+[2m2025-07-06 15:18:36.297[0;39m [32m INFO[0;39m [35m10368[0;39m [2m---[0;39m [2m[nio-8080-exec-9][0;39m [36mc.e.d.service.DependencyMatrixService   [0;39m [2m:[0;39m Step 1 Complete: Ingested 58 claims from all sources
+[2m2025-07-06 15:18:36.297[0;39m [32m INFO[0;39m [35m10368[0;39m [2m---[0;39m [2m[nio-8080-exec-9][0;39m [36mc.e.d.engine.ClaimProcessingEngine      [0;39m [2m:[0;39m Starting processing of 58 raw claims
+[2m2025-07-06 15:18:36.297[0;39m [32m INFO[0;39m [35m10368[0;39m [2m---[0;39m [2m[nio-8080-exec-9][0;39m [36mc.e.d.engine.ClaimProcessingEngine      [0;39m [2m:[0;39m Claim processing completed: 58 successful, 0 failed, took 0 ms
+[2m2025-07-06 15:18:36.297[0;39m [32m INFO[0;39m [35m10368[0;39m [2m---[0;39m [2m[nio-8080-exec-9][0;39m [36mc.e.d.service.DependencyMatrixService   [0;39m [2m:[0;39m Step 2 Complete: Scored 58 claims
+[2m2025-07-06 15:18:36.297[0;39m [32m INFO[0;39m [35m10368[0;39m [2m---[0;39m [2m[nio-8080-exec-9][0;39m [36mc.e.d.engine.ConflictResolutionEngine   [0;39m [2m:[0;39m Resolving conflicts for 58 claims
+[2m2025-07-06 15:18:36.297[0;39m [32m INFO[0;39m [35m10368[0;39m [2m---[0;39m [2m[nio-8080-exec-9][0;39m [36mc.e.d.engine.ConflictResolutionEngine   [0;39m [2m:[0;39m Resolved conflict: selected claim apigateway_56105c24-367c-4945-91bd-6059767a9c7d with confidence 0.04400000000000001
+[2m2025-07-06 15:18:36.297[0;39m [32m INFO[0;39m [35m10368[0;39m [2m---[0;39m [2m[nio-8080-exec-9][0;39m [36mc.e.d.engine.ConflictResolutionEngine   [0;39m [2m:[0;39m Resolved conflict: selected claim apigateway_ac18d8a8-d66f-46a8-af54-c19a7a085b19 with confidence 0.04400000000000001
+[2m2025-07-06 15:18:36.297[0;39m [32m INFO[0;39m [35m10368[0;39m [2m---[0;39m [2m[nio-8080-exec-9][0;39m [36mc.e.d.engine.ConflictResolutionEngine   [0;39m [2m:[0;39m Resolved conflict: selected claim apigateway_0dc3cb1d-cca4-4701-8dce-f093af220091 with confidence 0.04400000000000001
+[2m2025-07-06 15:18:36.297[0;39m [32m INFO[0;39m [35m10368[0;39m [2m---[0;39m [2m[nio-8080-exec-9][0;39m [36mc.e.d.engine.ConflictResolutionEngine   [0;39m [2m:[0;39m Resolved 55 claim groups into 55 final claims
+[2m2025-07-06 15:18:36.297[0;39m [32m INFO[0;39m [35m10368[0;39m [2m---[0;39m [2m[nio-8080-exec-9][0;39m [36mc.e.d.service.DependencyMatrixService   [0;39m [2m:[0;39m Step 3 Complete: Resolved to 55 final claims
+[2m2025-07-06 15:18:36.297[0;39m [32m INFO[0;39m [35m10368[0;39m [2m---[0;39m [2m[nio-8080-exec-9][0;39m [36mc.e.dependency.engine.InferenceEngine   [0;39m [2m:[0;39m Starting dependency inference on 55 claims
+[2m2025-07-06 15:18:36.299[0;39m [32m INFO[0;39m [35m10368[0;39m [2m---[0;39m [2m[nio-8080-exec-9][0;39m [36mc.e.dependency.engine.InferenceEngine   [0;39m [2m:[0;39m Inferred 30 dependencies from 55 claim groups
+[2m2025-07-06 15:18:36.299[0;39m [32m INFO[0;39m [35m10368[0;39m [2m---[0;39m [2m[nio-8080-exec-9][0;39m [36mc.e.d.service.DependencyMatrixService   [0;39m [2m:[0;39m Step 4 Complete: Inferred 30 dependencies
+[2m2025-07-06 15:18:36.299[0;39m [32m INFO[0;39m [35m10368[0;39m [2m---[0;39m [2m[nio-8080-exec-9][0;39m [36mc.e.d.engine.DependencyGraphBuilder     [0;39m [2m:[0;39m Building dependency graph from 30 dependencies
+[2m2025-07-06 15:18:36.299[0;39m [32m INFO[0;39m [35m10368[0;39m [2m---[0;39m [2m[nio-8080-exec-9][0;39m [36mc.e.d.engine.DependencyGraphBuilder     [0;39m [2m:[0;39m Built dependency graph with 39 nodes and 30 edges
+[2m2025-07-06 15:18:36.300[0;39m [32m INFO[0;39m [35m10368[0;39m [2m---[0;39m [2m[nio-8080-exec-9][0;39m [36mc.e.d.service.DependencyMatrixService   [0;39m [2m:[0;39m Step 5 Complete: Built dependency graph
+[2m2025-07-06 15:18:36.300[0;39m [32m INFO[0;39m [35m10368[0;39m [2m---[0;39m [2m[nio-8080-exec-9][0;39m [36mc.e.d.service.DependencyMatrixService   [0;39m [2m:[0;39m Pipeline Complete: Generated dependency matrix with 39 applications and 30 dependencies
+[2m2025-07-06 15:18:36.300[0;39m [32m INFO[0;39m [35m10368[0;39m [2m---[0;39m [2m[nio-8080-exec-9][0;39m [36mc.e.d.web.DependencyMatrixController    [0;39m [2m:[0;39m System summary generated successfully
+[2m2025-07-06 15:18:39.830[0;39m [32m INFO[0;39m [35m10368[0;39m [2m---[0;39m [2m[io-8080-exec-10][0;39m [36mc.e.d.web.DependencyMatrixController    [0;39m [2m:[0;39m Processing sample data via REST API
+[2m2025-07-06 15:18:39.830[0;39m [32m INFO[0;39m [35m10368[0;39m [2m---[0;39m [2m[io-8080-exec-10][0;39m [36mc.e.d.service.DependencyMatrixService   [0;39m [2m:[0;39m Processing enhanced sample data for demonstration
+[2m2025-07-06 15:18:39.830[0;39m [32m INFO[0;39m [35m10368[0;39m [2m---[0;39m [2m[io-8080-exec-10][0;39m [36mc.e.d.service.DependencyMatrixService   [0;39m [2m:[0;39m Starting full dependency matrix pipeline processing with all data sources
+[2m2025-07-06 15:18:39.830[0;39m [32m INFO[0;39m [35m10368[0;39m [2m---[0;39m [2m[io-8080-exec-10][0;39m [36mc.e.dependency.adapter.RouterLogAdapter [0;39m [2m:[0;39m Parsing 19 router log entries
+[2m2025-07-06 15:18:39.831[0;39m [32m INFO[0;39m [35m10368[0;39m [2m---[0;39m [2m[io-8080-exec-10][0;39m [36mc.e.dependency.adapter.RouterLogAdapter [0;39m [2m:[0;39m Successfully parsed 17 claims from router log data
+[2m2025-07-06 15:18:39.831[0;39m [32m INFO[0;39m [35m10368[0;39m [2m---[0;39m [2m[io-8080-exec-10][0;39m [36mc.e.dependency.adapter.CodebaseAdapter  [0;39m [2m:[0;39m Parsing 15 codebase dependency entries
+[2m2025-07-06 15:18:39.831[0;39m [32m INFO[0;39m [35m10368[0;39m [2m---[0;39m [2m[io-8080-exec-10][0;39m [36mc.e.dependency.adapter.CodebaseAdapter  [0;39m [2m:[0;39m Successfully parsed 13 claims from codebase dependency data
+[2m2025-07-06 15:18:39.831[0;39m [32m INFO[0;39m [35m10368[0;39m [2m---[0;39m [2m[io-8080-exec-10][0;39m [36mc.e.d.adapter.ApiGatewayAdapter         [0;39m [2m:[0;39m Parsing API Gateway logs in json format
+[2m2025-07-06 15:18:39.834[0;39m [32m INFO[0;39m [35m10368[0;39m [2m---[0;39m [2m[io-8080-exec-10][0;39m [36mc.e.d.adapter.ApiGatewayAdapter         [0;39m [2m:[0;39m Extracted 12 API call claims from json format logs
+[2m2025-07-06 15:18:39.834[0;39m [32m INFO[0;39m [35m10368[0;39m [2m---[0;39m [2m[io-8080-exec-10][0;39m [36mc.e.dependency.adapter.CiCdAdapter      [0;39m [2m:[0;39m Parsing 7 CI/CD log entries
+[2m2025-07-06 15:18:39.835[0;39m [32m INFO[0;39m [35m10368[0;39m [2m---[0;39m [2m[io-8080-exec-10][0;39m [36mc.e.dependency.adapter.CiCdAdapter      [0;39m [2m:[0;39m Extracted 4 CI/CD dependency claims
+[2m2025-07-06 15:18:39.835[0;39m [32m INFO[0;39m [35m10368[0;39m [2m---[0;39m [2m[io-8080-exec-10][0;39m [36mc.e.dependency.adapter.TelemetryAdapter [0;39m [2m:[0;39m Parsing 12 telemetry log entries
+[2m2025-07-06 15:18:39.835[0;39m [32m INFO[0;39m [35m10368[0;39m [2m---[0;39m [2m[io-8080-exec-10][0;39m [36mc.e.dependency.adapter.TelemetryAdapter [0;39m [2m:[0;39m Extracted 12 telemetry dependency claims
+[2m2025-07-06 15:18:39.835[0;39m [32m INFO[0;39m [35m10368[0;39m [2m---[0;39m [2m[io-8080-exec-10][0;39m [36mc.e.d.service.DependencyMatrixService   [0;39m [2m:[0;39m Step 1 Complete: Ingested 58 claims from all sources
+[2m2025-07-06 15:18:39.835[0;39m [32m INFO[0;39m [35m10368[0;39m [2m---[0;39m [2m[io-8080-exec-10][0;39m [36mc.e.d.engine.ClaimProcessingEngine      [0;39m [2m:[0;39m Starting processing of 58 raw claims
+[2m2025-07-06 15:18:39.835[0;39m [32m INFO[0;39m [35m10368[0;39m [2m---[0;39m [2m[io-8080-exec-10][0;39m [36mc.e.d.engine.ClaimProcessingEngine      [0;39m [2m:[0;39m Claim processing completed: 58 successful, 0 failed, took 0 ms
+[2m2025-07-06 15:18:39.836[0;39m [32m INFO[0;39m [35m10368[0;39m [2m---[0;39m [2m[io-8080-exec-10][0;39m [36mc.e.d.service.DependencyMatrixService   [0;39m [2m:[0;39m Step 2 Complete: Scored 58 claims
+[2m2025-07-06 15:18:39.836[0;39m [32m INFO[0;39m [35m10368[0;39m [2m---[0;39m [2m[io-8080-exec-10][0;39m [36mc.e.d.engine.ConflictResolutionEngine   [0;39m [2m:[0;39m Resolving conflicts for 58 claims
+[2m2025-07-06 15:18:39.836[0;39m [32m INFO[0;39m [35m10368[0;39m [2m---[0;39m [2m[io-8080-exec-10][0;39m [36mc.e.d.engine.ConflictResolutionEngine   [0;39m [2m:[0;39m Resolved conflict: selected claim apigateway_9a7d9fc1-f7b7-4f82-8cbb-8e42dd0937dd with confidence 0.04400000000000001
+[2m2025-07-06 15:18:39.836[0;39m [32m INFO[0;39m [35m10368[0;39m [2m---[0;39m [2m[io-8080-exec-10][0;39m [36mc.e.d.engine.ConflictResolutionEngine   [0;39m [2m:[0;39m Resolved conflict: selected claim apigateway_4c5474c4-9efb-4736-b8ff-8bb907fc147d with confidence 0.04400000000000001
+[2m2025-07-06 15:18:39.836[0;39m [32m INFO[0;39m [35m10368[0;39m [2m---[0;39m [2m[io-8080-exec-10][0;39m [36mc.e.d.engine.ConflictResolutionEngine   [0;39m [2m:[0;39m Resolved conflict: selected claim apigateway_2a5cbba2-8b36-4574-9efc-6caa002a92fb with confidence 0.04400000000000001
+[2m2025-07-06 15:18:39.836[0;39m [32m INFO[0;39m [35m10368[0;39m [2m---[0;39m [2m[io-8080-exec-10][0;39m [36mc.e.d.engine.ConflictResolutionEngine   [0;39m [2m:[0;39m Resolved 55 claim groups into 55 final claims
+[2m2025-07-06 15:18:39.836[0;39m [32m INFO[0;39m [35m10368[0;39m [2m---[0;39m [2m[io-8080-exec-10][0;39m [36mc.e.d.service.DependencyMatrixService   [0;39m [2m:[0;39m Step 3 Complete: Resolved to 55 final claims
+[2m2025-07-06 15:18:39.836[0;39m [32m INFO[0;39m [35m10368[0;39m [2m---[0;39m [2m[io-8080-exec-10][0;39m [36mc.e.dependency.engine.InferenceEngine   [0;39m [2m:[0;39m Starting dependency inference on 55 claims
+[2m2025-07-06 15:18:39.837[0;39m [32m INFO[0;39m [35m10368[0;39m [2m---[0;39m [2m[io-8080-exec-10][0;39m [36mc.e.dependency.engine.InferenceEngine   [0;39m [2m:[0;39m Inferred 30 dependencies from 55 claim groups
+[2m2025-07-06 15:18:39.837[0;39m [32m INFO[0;39m [35m10368[0;39m [2m---[0;39m [2m[io-8080-exec-10][0;39m [36mc.e.d.service.DependencyMatrixService   [0;39m [2m:[0;39m Step 4 Complete: Inferred 30 dependencies
+[2m2025-07-06 15:18:39.837[0;39m [32m INFO[0;39m [35m10368[0;39m [2m---[0;39m [2m[io-8080-exec-10][0;39m [36mc.e.d.engine.DependencyGraphBuilder     [0;39m [2m:[0;39m Building dependency graph from 30 dependencies
+[2m2025-07-06 15:18:39.837[0;39m [32m INFO[0;39m [35m10368[0;39m [2m---[0;39m [2m[io-8080-exec-10][0;39m [36mc.e.d.engine.DependencyGraphBuilder     [0;39m [2m:[0;39m Built dependency graph with 39 nodes and 30 edges
+[2m2025-07-06 15:18:39.838[0;39m [32m INFO[0;39m [35m10368[0;39m [2m---[0;39m [2m[io-8080-exec-10][0;39m [36mc.e.d.service.DependencyMatrixService   [0;39m [2m:[0;39m Step 5 Complete: Built dependency graph
+[2m2025-07-06 15:18:39.838[0;39m [32m INFO[0;39m [35m10368[0;39m [2m---[0;39m [2m[io-8080-exec-10][0;39m [36mc.e.d.service.DependencyMatrixService   [0;39m [2m:[0;39m Pipeline Complete: Generated dependency matrix with 39 applications and 30 dependencies
+[2m2025-07-06 15:18:39.838[0;39m [32m INFO[0;39m [35m10368[0;39m [2m---[0;39m [2m[io-8080-exec-10][0;39m [36mc.e.d.web.DependencyMatrixController    [0;39m [2m:[0;39m Sample data processed successfully: 39 apps, 30 deps

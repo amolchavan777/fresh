@@ -18,7 +18,7 @@ import java.util.Map;
  */
 @RestController
 @RequestMapping("/api/dependency-matrix")
-@CrossOrigin(origins = {"http://localhost:3000", "http://localhost:5173"}) // Allow Vite dev server
+@CrossOrigin(origins = {"http://localhost:3000", "http://localhost:5173", "http://localhost:5174", "http://localhost:5175", "http://localhost:5176"}) // Allow Vite dev server on multiple ports
 public class DependencyMatrixController {
     private static final Logger logger = LoggerFactory.getLogger(DependencyMatrixController.class);
     
@@ -57,10 +57,12 @@ public class DependencyMatrixController {
         logger.info("Processing custom data via REST API");
         
         try {
-            DependencyMatrix matrix = dependencyMatrixService.processFullPipeline(
+            DependencyMatrix matrix = dependencyMatrixService.processFullPipelineWithAllSources(
                 request.getRouterLogs(),
                 request.getCodebaseDeps(),
-                request.getApiGatewayLogs()
+                request.getApiGatewayLogs(),
+                request.getCiCdLogs(),
+                request.getTelemetryLogs()
             );
             
             logger.info("Custom data processed successfully: {} apps, {} deps", 
@@ -147,6 +149,8 @@ public class DependencyMatrixController {
         private List<String> routerLogs;
         private List<String> codebaseDeps;
         private List<String> apiGatewayLogs;
+        private List<String> ciCdLogs;
+        private List<String> telemetryLogs;
         
         // Default constructor
         public ProcessRequest() {
@@ -163,12 +167,20 @@ public class DependencyMatrixController {
         public List<String> getApiGatewayLogs() { return apiGatewayLogs; }
         public void setApiGatewayLogs(List<String> apiGatewayLogs) { this.apiGatewayLogs = apiGatewayLogs; }
         
+        public List<String> getCiCdLogs() { return ciCdLogs; }
+        public void setCiCdLogs(List<String> ciCdLogs) { this.ciCdLogs = ciCdLogs; }
+        
+        public List<String> getTelemetryLogs() { return telemetryLogs; }
+        public void setTelemetryLogs(List<String> telemetryLogs) { this.telemetryLogs = telemetryLogs; }
+        
         @Override
         public String toString() {
-            return String.format("ProcessRequest{routerLogs=%d, codebaseDeps=%d, apiGatewayLogs=%d}", 
+            return String.format("ProcessRequest{routerLogs=%d, codebaseDeps=%d, apiGatewayLogs=%d, ciCdLogs=%d, telemetryLogs=%d}", 
                 routerLogs != null ? routerLogs.size() : 0,
                 codebaseDeps != null ? codebaseDeps.size() : 0,
-                apiGatewayLogs != null ? apiGatewayLogs.size() : 0);
+                apiGatewayLogs != null ? apiGatewayLogs.size() : 0,
+                ciCdLogs != null ? ciCdLogs.size() : 0,
+                telemetryLogs != null ? telemetryLogs.size() : 0);
         }
     }
 }

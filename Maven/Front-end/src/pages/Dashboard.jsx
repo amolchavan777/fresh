@@ -9,7 +9,6 @@ import {
   CircularProgress,
   Alert,
   Button,
-  Chip,
 } from '@mui/material';
 import {
   BarChart,
@@ -37,12 +36,21 @@ const Dashboard = () => {
   const fetchDashboardData = async () => {
     setLoading(true);
     setError('');
+    
     try {
-      // Fetch summary data from backend
-      const summaryResponse = await axios.get('/api/dependency-matrix/summary');
+      console.log('Fetching dashboard data from backend...');
       
-      // Fetch health status
-      const healthResponse = await axios.get('/api/dependency-matrix/health');
+      // Test backend connectivity first
+      const healthResponse = await axios.get('/api/dependency-matrix/health', {
+        timeout: 5000
+      });
+      console.log('Health response:', healthResponse.data);
+      
+      // Fetch summary data from backend with timeout
+      const summaryResponse = await axios.get('/api/dependency-matrix/summary', {
+        timeout: 5000
+      });
+      console.log('Summary response:', summaryResponse.data);
       
       // Process the data into dashboard format
       const processedStats = {
@@ -72,9 +80,18 @@ const Dashboard = () => {
         ],
       };
       
+      console.log('Successfully processed dashboard data:', processedStats);
       setStats(processedStats);
+      setError(''); // Clear any previous errors on successful fetch
     } catch (err) {
       console.error('Failed to fetch dashboard data:', err);
+      console.error('Error details:', {
+        message: err.message,
+        status: err.response?.status,
+        data: err.response?.data,
+        url: err.config?.url
+      });
+      
       // Fallback to mock data if backend is not available
       setStats({
         totalApplications: 24,
@@ -102,12 +119,13 @@ const Dashboard = () => {
           { date: '2025-07-05', processed: 156 },
         ],
       });
-      setError('Using offline data - backend connection failed');
+      setError(`Backend connection failed (${err.response?.status || 'Network Error'}): ${err.message}`);
     } finally {
       setLoading(false);
     }
   };
 
+  // Force refresh on component mount to clear any cached states
   useEffect(() => {
     fetchDashboardData();
   }, []);
@@ -134,7 +152,7 @@ const Dashboard = () => {
     <Container maxWidth="lg">
       <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 3 }}>
         <Typography variant="h4">
-          Dependency Matrix Dashboard
+          Dependency Matrix Dashboard (Live Backend Data)
         </Typography>
         <Button
           variant="outlined"

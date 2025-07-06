@@ -30,9 +30,11 @@ import java.util.regex.Pattern;
 public class RouterLogAdapter {
     private static final Logger logger = LoggerFactory.getLogger(RouterLogAdapter.class);
     private static final Pattern LOG_PATTERN = Pattern.compile(
-            "(?<timestamp>\\d{4}-\\d{2}-\\d{2} \\d{2}:\\d{2}:\\d{2}) \\[INFO] (?<sourceIp>\\d+\\.\\d+\\.\\d+\\.\\d+) -> (?<targetIp>\\d+\\.\\d+\\.\\d+\\.\\d+):(?<targetPort>\\d+) (?<protocol>\\w+)( (?<method>\\w+))?( (?<endpoint>[^ ]+))?( (?<statusCode>\\d+))?( (?<responseTime>\\d+)ms)?"
+            "(?<timestamp>\\d{4}-\\d{2}-\\d{2}[T ]\\d{2}:\\d{2}:\\d{2}(?:\\.\\d+)?Z?) \\[INFO] (?<sourceIp>[\\w.-]+) -> (?<targetIp>[\\w.-]+):(?<targetPort>\\d+) (?<protocol>\\w+)( (?<method>\\w+))?( (?<endpoint>[^ ]+))?( (?<statusCode>\\d+))?( (?<responseTime>\\d+)ms)?"
     );
-    private static final DateTimeFormatter DATE_FORMATTER = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+    private static final DateTimeFormatter DATE_FORMATTER_SPACE = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+    private static final DateTimeFormatter DATE_FORMATTER_ISO = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss'Z'");
+    private static final DateTimeFormatter DATE_FORMATTER_ISO_MILLIS = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'");
 
     /**
      * Parses a router log file and extracts dependency claims.
@@ -75,7 +77,8 @@ public class RouterLogAdapter {
             return null;
         }
         try {
-            LocalDateTime timestamp = LocalDateTime.parse(matcher.group("timestamp"), DATE_FORMATTER);
+            String timestampStr = matcher.group("timestamp");
+            LocalDateTime timestamp = parseTimestamp(timestampStr);
             String sourceIp = matcher.group("sourceIp");
             String targetIp = matcher.group("targetIp");
             int targetPort = Integer.parseInt(matcher.group("targetPort"));
@@ -103,20 +106,70 @@ public class RouterLogAdapter {
     }
 
     /**
+     * Parse timestamp from various formats
+     */
+    private LocalDateTime parseTimestamp(String timestampStr) {
+        // Try different timestamp formats
+        try {
+            if (timestampStr.contains("T") && timestampStr.endsWith("Z")) {
+                if (timestampStr.contains(".")) {
+                    return LocalDateTime.parse(timestampStr, DATE_FORMATTER_ISO_MILLIS);
+                } else {
+                    return LocalDateTime.parse(timestampStr, DATE_FORMATTER_ISO);
+                }
+            } else {
+                return LocalDateTime.parse(timestampStr, DATE_FORMATTER_SPACE);
+            }
+        } catch (Exception e) {
+            logger.warn("Failed to parse timestamp: {}", timestampStr, e);
+            throw e;
+        }
+    }
+
+    /**
      * Converts a RouterLogEntry to a standardized Claim object.
      * @param entry RouterLogEntry
      * @param rawLine Original log line
      * @return Claim
      */
     public Claim toClaim(RouterLogEntry entry, String rawLine) {
-        // TODO: Add more robust normalization and confidence scoring
+        // Create meaningful dependency claims from router logs
+        String sourceApp = mapIpToApplication(entry.getSourceIp());
+        String targetApp = mapIpToApplication(entry.getTargetIp());
+        
         return Claim.builder()
-                .id("claim-" + entry.hashCode())
+                .id("router-claim-" + Math.abs(entry.hashCode()))
                 .sourceType("ROUTER_LOG")
                 .rawData(rawLine)
-                .processedData(entry.getSourceIp() + " -> " + entry.getTargetIp())
+                .processedData(String.format("%s -> %s via %s%s", 
+                    sourceApp, 
+                    targetApp, 
+                    entry.getProtocol(),
+                    entry.getEndpoint() != null ? " " + entry.getEndpoint() : ""))
                 .timestamp(java.time.Instant.now())
                 .build();
+    }
+    
+    /**
+     * Map IP addresses to application names based on common patterns
+     */
+    private String mapIpToApplication(String ip) {
+        // Simple IP-to-service mapping for demo purposes
+        // In a real system, this would likely come from a configuration or service registry
+        if ("user-service".equals(ip) || ip.contains("user")) return "user-service";
+        if ("auth-service".equals(ip) || ip.contains("auth")) return "auth-service";
+        if ("order-service".equals(ip) || ip.contains("order")) return "order-service";
+        if ("payment-service".equals(ip) || ip.contains("payment")) return "payment-service";
+        if ("notification-service".equals(ip) || ip.contains("notification")) return "notification-service";
+        if ("api-gateway".equals(ip) || ip.contains("gateway")) return "api-gateway";
+        
+        // Fallback: try to extract service name from IP-like strings
+        if (ip.contains("-")) {
+            return ip;  // Assume it's already a service name
+        }
+        
+        // Default fallback for actual IP addresses
+        return "app-" + ip.replace(".", "-");
     }
 
     /**
